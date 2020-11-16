@@ -1,0 +1,217 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "afasf asfas",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "sair",
+                        "cancela",
+                        "cancelar"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help",
+                        "alexa ajuda",
+                        "quero ajuda",
+                        "preciso de ajuda",
+                        "ajuda"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "Para",
+                        "Pare",
+                        "Parar"
+                    ]
+                },
+                {
+                    "name": "GetPerfilIntent",
+                    "slots": [
+                        {
+                            "name": "perfil",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{perfil} "
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{perfil} hoje ",
+                        "sou {perfil}",
+                        "hoje estou {perfil}"
+                    ]
+                },
+                {
+                    "name": "SugestaoConteudoIntent",
+                    "slots": [],
+                    "samples": [
+                        "pra mim",
+                        "Alguma sugestão de conteúdo ",
+                        "sugestão de conteúdo",
+                        "sugestão de conteúdo para mim",
+                        "Alguma sugestão de conteúdo para mim"
+                    ]
+                },
+                {
+                    "name": "GetRespostaConteudo",
+                    "slots": [
+                        {
+                            "name": "Resposta",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{Resposta}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Gostei {Resposta}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "Início",
+                        "Voltar ao início"
+                    ]
+                },
+                {
+                    "name": "ConsultaSaldoIntent",
+                    "slots": [],
+                    "samples": [
+                        "Meu saldo",
+                        "Qual o saldo da minha conta",
+                        "Saldo",
+                        "Quanto tenho em minha conta",
+                        "Consultar saldo"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "está correto",
+                        "correto",
+                        "desejo",
+                        "quero",
+                        "sim"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "nop",
+                        "nem",
+                        "não quero",
+                        "não"
+                    ]
+                },
+                {
+                    "name": "MorningCallsIntent",
+                    "slots": [],
+                    "samples": [
+                        "notícias",
+                        "Tocar meus morning calls",
+                        "Abrir mornings",
+                        "Escutar morning calls",
+                        "Escutar",
+                        "Morning",
+                        "Tocar morning calls",
+                        "Morning calls",
+                        "Quero escutar os morning calls"
+                    ]
+                },
+                {
+                    "name": "ConsultaExtratoIntent",
+                    "slots": [],
+                    "samples": [
+                        "Minhas movimentações",
+                        "Últimas transações",
+                        "Extrato de hoje",
+                        "Meu extrato de hoje",
+                        "Extrato"
+                    ]
+                },
+                {
+                    "name": "PinUsuarioIntent",
+                    "slots": [
+                        {
+                            "name": "pin",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "senha {pin}",
+                        "pin {pin}",
+                        "meu pin {pin}",
+                        "minha senha é {pin}",
+                        "{pin}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetPerfilIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "perfil",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.775395897554.1589377145486"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetRespostaConteudo",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Resposta",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.257224673836.1245723217049"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.775395897554.1589377145486",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Qual é o seu perfil de investidor, conservador, moderado ou arrojado?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.257224673836.1245723217049",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Você gostou da minha sugestão de conteúdo?"
+                    }
+                ]
+            }
+        ]
+    }
+}
